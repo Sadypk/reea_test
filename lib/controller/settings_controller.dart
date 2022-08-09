@@ -13,6 +13,7 @@ class SettingsController extends GetxController{
     super.onInit();
   }
 
+  // asks for permission & fetches user location
   void getUserLocation()async{
     await Geolocator.requestPermission().then((value) async {
       Position position  = await Geolocator.getCurrentPosition();
@@ -20,6 +21,7 @@ class SettingsController extends GetxController{
     });
   }
 
+  // change location
   void onChangeLanguage(String? value){
     switch(value){
       case 'english' : {

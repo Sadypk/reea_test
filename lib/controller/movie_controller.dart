@@ -21,25 +21,34 @@ class MovieController extends GetxController{
     Box<Movie> box = await hiveController.openBox();
     List<Movie> cachedList = hiveController.getCachedMovies(box);
     List<Movie> queriedList = <Movie>[];
+
+    // if cache has data show cache data while api fetches new data
     if(cachedList.isNotEmpty){
       movies.addAll(cachedList);
       queriedList.addAll(await getCurrentPageData(currentPage.value));
       if(queriedList.isNotEmpty){
         movies.clear();
         movies.addAll(queriedList);
+
+        // replace cache data with new data
         hiveController.clearCache(box);
         for (Movie movie in queriedList) {
           hiveController.addMoviesToCache(box, movie);
         }}
     }else{
+
+      // cache is empty, fetch new api data
       queriedList.addAll(await getCurrentPageData(currentPage.value));
       movies.addAll(queriedList);
+
+      // add data to cache
       for (Movie movie in queriedList) {
         hiveController.addMoviesToCache(box, movie);
       }
     }
   }
 
+  // fetching next page data
   void nextPage()async{
     int nextPage = currentPage.value+1;
     isFetchingData.value = true;
@@ -48,5 +57,6 @@ class MovieController extends GetxController{
     currentPage.value++;
   }
 
+  // get data for a specific page
   Future<List<Movie>> getCurrentPageData(int page) async => await movieRepository.getMovies('/movie/popular', addedQuery: {'page': page});
 }

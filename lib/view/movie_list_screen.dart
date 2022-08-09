@@ -23,6 +23,7 @@ class _MovieListScreenState extends State<MovieListScreen> {
 
   @override
   void initState() {
+    // For loading indicator when fetching new data
     scrollController.addListener(() {
       if (scrollController.position.pixels >=
           scrollController.position.maxScrollExtent) {
@@ -42,6 +43,7 @@ class _MovieListScreenState extends State<MovieListScreen> {
             width: Get.width,
             child: Stack(
               children: <Widget>[
+                // background image
                 Blur(
                   blur: 5,
                   blurColor: AppColors.black,
@@ -59,6 +61,8 @@ class _MovieListScreenState extends State<MovieListScreen> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
+
+                    // appbar
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -72,6 +76,8 @@ class _MovieListScreenState extends State<MovieListScreen> {
                         ),
                       ],
                     ).paddingAll(15),
+
+                    //movie list
                     Expanded(
                       child: controller.movies.isNotEmpty
                           ? ListView.builder(
@@ -103,6 +109,8 @@ class _MovieListScreenState extends State<MovieListScreen> {
                     ),
                   ],
                 ),
+
+                // loading indicator when fetching new data
                 if (controller.isFetchingData.value &&
                     controller.movies.isNotEmpty)
                   const Align(

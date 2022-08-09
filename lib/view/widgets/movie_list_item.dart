@@ -22,6 +22,7 @@ class MovieListItem extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 15),
       child: Row(
         children: <Widget>[
+          // Movie Poster
           Container(
             height: 200,
             width: 130,
@@ -68,6 +69,8 @@ class MovieListItem extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
+
+          // Movie overview, ratings, genres
           Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

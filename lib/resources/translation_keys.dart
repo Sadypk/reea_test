@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+
+// getX translations
 class TranslationKeys extends Translations{
   @override
   Map<String, Map<String, String>> get keys => {

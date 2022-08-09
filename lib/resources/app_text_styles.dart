@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:reea_test/resources/app_colors.dart';
 
+// holds all the text styles used by app
 class AppTextStyles {
   static TextStyle title = TextStyle(
     fontSize: 24,

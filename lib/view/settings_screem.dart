@@ -74,6 +74,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       const SizedBox(
                         height: 25,
                       ),
+
+
+                      // Language control
                       Text(
                         'language'.tr,
                         style: AppTextStyles.descriptionSectionHeaderText,
@@ -118,6 +121,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       const SizedBox(
                         height: 20,
                       ),
+
+
+                      // User location preview
                       Text(
                         'location'.tr,
                         style: AppTextStyles.descriptionSectionHeaderText,

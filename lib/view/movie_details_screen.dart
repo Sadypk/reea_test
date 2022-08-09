@@ -23,12 +23,15 @@ class MovieDetailsScreen extends StatelessWidget {
         backgroundColor: AppColors.black,
         body: CustomScrollView(
           slivers: <Widget>[
+            // The movie poster, title, genres & rating
             SliverPersistentHeader(
               pinned: true,
               floating: true,
               delegate: MoviePoster(
                   movie: movie, minValue: 300, maxValue: (Get.width / 2) * 3),
             ),
+
+            // Movie release date & overview
             SliverList(
               delegate: SliverChildListDelegate(<Widget>[
                 Padding(
