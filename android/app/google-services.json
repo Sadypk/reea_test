@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "225600294999",
+    "project_id": "reea-b50dd",
+    "storage_bucket": "reea-b50dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225600294999:android:828cc4671a574332199312",
+        "android_client_info": {
+          "package_name": "com.example.reea_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "225600294999-v9qjoduabg6luu7tjqcd9on32bqvqup0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApWpABpHIlYieoEbyc3qU7ir4ioqJeERA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "225600294999-v9qjoduabg6luu7tjqcd9on32bqvqup0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
